@@ -1,5 +1,5 @@
 body{
-   /* font-family: 'Barlow Condensed', sans-serif; */
+   font-family: 'Barlow Condensed', sans-serif;
    background-color: lightblue;
    transition: background-color .5s;
 }
@@ -49,13 +49,17 @@ body{
    align-items: center;
 }
 
-.playpause-track, .prev-track, .next-track{
+.playpause-track, 
+.prev-track, 
+.next-track{
    padding: 25px;
    opacity: 0.8;
    transition: opacity .2s;
 }
 
-.playpause-track:hover, .prev-track:hover, .next-track:hover{
+.playpause-track:hover, 
+.prev-track:hover, 
+.next-track:hover{
    opacity: 1.0;
 }
 
@@ -97,6 +101,7 @@ body{
 
 .seek_slider {
    width: 90%;
+   transition: 0.1s;
 }
 
 .volume_slider{
