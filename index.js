@@ -26,12 +26,7 @@ let trackList = [
       image:"https://imageio.forbes.com/blogs-images/pamwindsor/files/2019/04/Michael-W.-Smith-Revised-Top.jpg?format=jpg&width=1200",
       path: "/Assets/songs/Michael Smith - Majesty.ogg"
    },
-   {
-      name: "You will be my song",
-      artist: "Don Moen",
-      image:"https://donmoen.com/wp-content/uploads/2020/12/don_moen_about_image.jpg",
-      path: "/Assets/songs/Don Moen - You Will Be My Song.mp3"
-   },
+   
    {
       name:"House of miracles",
       artist: "Bethel music",
@@ -43,12 +38,6 @@ let trackList = [
       artist: "Maveric City",
       image:"https://i.ytimg.com/vi/EJl8mBzcPeM/maxresdefault.jpg",
       path:"/Assets/songs/Maveric City - Is He Worthy.ogg"
-   },
-   {
-      name:"Still",
-      artist:"Hillsong",
-      image:"https://i.ytimg.com/vi/lAdwX8HypJM/maxresdefault.jpg",
-      path:"/Assets/songs/Hillsong - Still.mp3"
    }
 ]
 
@@ -66,20 +55,10 @@ function loadTrack(trackIndex){
 
    updateTimer= setInterval(seekUpdate, 1000)
    
-
-   currentTrack.addEventListener("ended", nextBtn);
-   console.log('audio stopped because it ended or end of list')
-      random_bg_color();
+   currentTrack.addEventListener("ended", nextBtn);  //the nextBtn does not trigger automatically yet.
+   // console.log('audio stopped because it ended or end of list')
 }
 
-function random_bg_color(){
-   let red = Math.floor(Math.random() * 256 ) + 64;
-   let blue = Math.floor(Math.random() * 256 ) + 64;
-   let green = Math.floor(Math.random() * 256 ) + 64;
-
-   let bgColor = " rgb (" + red + "," + green+ "," + blue + ")";
-   document.style.background = bgColor;
-}
 
 function resetValues(){
    currentTime.textContent = "00:00";
@@ -125,10 +104,7 @@ function seekTo(){
 
       // seekSlider.value = currentTime;
       seekto = currentTrack.duration * (seekSlider.value / 100);
-      currentTrack.currentTime = seekto;
-      // console.log(currentTime.value);
-   
-   
+      currentTrack.currentTime = seekto;   
 }
 
 
@@ -143,10 +119,7 @@ function seekUpdate(){
       seekPosition = currentTrack.currentTime * (100 / currentTrack.duration);
       seekSlider.value = seekPosition;
 
-
-      // console.log('g', seekPosition, seekSlider.value) 
-
-
+      
       let currentMinutes = Math.floor(currentTrack.currentTime / 60);
       let currentSeconds = Math.floor(currentTrack.currentTime - currentMinutes * 60);
       let durationMinutes = Math.floor(currentTrack.duration /60);
