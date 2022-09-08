@@ -19,27 +19,33 @@ let updateTimer ;
 
 let currentTrack = document.createElement('audio');
 
-let trackList = [
-   {
-      name: "Majesty",
-      artist:"Michael Smith",
-      image:"https://imageio.forbes.com/blogs-images/pamwindsor/files/2019/04/Michael-W.-Smith-Revised-Top.jpg?format=jpg&width=1200",
-      path: "/Assets/songs/Michael Smith - Majesty.ogg"
-   },
+const fileSelector = document.getElementById('file-selector');
+   fileSelector.addEventListener('change', (event) => {
+      const trackList = event.target.files;
+   //  console.log(fileList);
+   });
+
+// let trackList = [
+//    {
+//       name: "Majesty",
+//       artist:"Michael Smith",
+//       image:"https://imageio.forbes.com/blogs-images/pamwindsor/files/2019/04/Michael-W.-Smith-Revised-Top.jpg?format=jpg&width=1200",
+//       path: "/Assets/songs/Michael Smith - Majesty.ogg"
+//    },
    
-   {
-      name:"House of miracles",
-      artist: "Bethel music",
-      image:"https://i.ytimg.com/vi/HuTdgcD-o8Q/maxresdefault.jpg",
-      path:"/Assets/songs/Bethel Music - House of Miracles.ogg"
-   },
-   {
-      name: "Is HE worthy",
-      artist: "Maveric City",
-      image:"https://i.ytimg.com/vi/EJl8mBzcPeM/maxresdefault.jpg",
-      path:"/Assets/songs/Maveric City - Is He Worthy.ogg"
-   }
-]
+//    {
+//       name:"House of miracles",
+//       artist: "Bethel music",
+//       image:"https://i.ytimg.com/vi/HuTdgcD-o8Q/maxresdefault.jpg",
+//       path:"/Assets/songs/Bethel Music - House of Miracles.ogg"
+//    },
+//    {
+//       name: "Is HE worthy",
+//       artist: "Maveric City",
+//       image:"https://i.ytimg.com/vi/EJl8mBzcPeM/maxresdefault.jpg",
+//       path:"/Assets/songs/Maveric City - Is He Worthy.ogg"
+//    }
+// ]
 
 function loadTrack(trackIndex){
    clearInterval(updateTimer);
