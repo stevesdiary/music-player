@@ -22,8 +22,11 @@ let currentTrack = document.createElement('audio');
 const fileSelector = document.getElementById('file-selector');
    fileSelector.addEventListener('change', (event) => {
       const trackList = event.target.files;
-   //  console.log(fileList);
+      console.log(trackList);
    });
+
+// files need to be read from the computer using readFile method. This method will be imported at the top of the code and used to read the audio files so that we can play those audio files.
+
 
 // let trackList = [
 //    {
