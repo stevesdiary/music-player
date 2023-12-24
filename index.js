@@ -112,8 +112,8 @@ function prevTrack(){
 function seekTo(){
 
       // seekSlider.value = currentTime;
-      seekto = currentTrack.duration * (seekSlider.value / 100);
-      currentTrack.currentTime = seekto;   
+      seekTo = currentTrack.duration * (seekSlider.value / 100);
+      currentTrack.currentTime = seekTo;   
 }
 
 
